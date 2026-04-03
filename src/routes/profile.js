@@ -5,7 +5,7 @@ const Profile = require('../models/Profile');
 router.get('/', async (req, res) => {
   try {
     let profile = await Profile.findOne();
-    if (!profile) profile = await Profile.create({});
+    
     res.json(profile);
   } catch (err) {
     res.status(500).json({ error: err.message });
